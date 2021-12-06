@@ -27,7 +27,7 @@ export const ShopPanel = () => {
 
     function handlePageProduct(props){
         const productId = props.target.parentElement.id
-        // window.location.replace('/productsPage')
+        window.location.replace('/productsPage()')
     }
 
     return (

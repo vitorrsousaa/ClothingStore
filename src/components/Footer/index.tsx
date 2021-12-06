@@ -18,7 +18,7 @@ export const Footer = () => {
                 </div>
                 <div>
                     <h1>TALK TO ME</h1>
-                    <Link href='/about'>
+                    <Link href='/contact'>
                         <a>Contact</a>
                     </Link>
                 </div>
