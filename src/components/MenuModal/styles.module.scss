@@ -1,0 +1,65 @@
+.modal{
+    background: var( --modal-background);
+    height: 100vh;
+    position: relative;
+    padding: 3rem 2rem 0 1rem;
+    
+    width: 100%;
+    max-width: 350px;
+
+    @media (max-width: 320px) {
+        width: 280px
+        
+    }
+    
+    svg{
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+    }
+    .title{
+        margin: 5rem 0;
+    
+        h1{
+            font-weight: 600;
+            letter-spacing: 0.5rem;
+            text-align: left;
+            font-size: 1.2rem;
+            margin-bottom: 0.4rem;
+        }
+        span{
+            color:var(--modal-span-text-color);
+            font-size: 0.8rem;
+        }
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+
+        a{
+            font-weight: 500;
+            letter-spacing: 0.4rem;
+            font-size: 1rem;
+            border-bottom: solid 1px var(--modal-a-text-border);
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            color: var(--modal-a-text-color)
+        }
+    }
+    
+}
+
+.overlay{
+    background: rgba(0, 0, 0, 0.5 );
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}

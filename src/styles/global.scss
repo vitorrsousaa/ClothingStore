@@ -1,0 +1,77 @@
+:root {
+    --background: #efefef;
+    --light-background: #ffffff;
+
+    --text-font-family: 'Montserrat', sans-serif;
+    --side-text-family: 'Shadows Into Light', cursive;
+    --text-color: #1c1b1b;
+
+    --link-color: #6a6a6a;
+
+    --button-background: #1c1b1b;
+    --button-text-color: #ffffff;
+    --border-color: #cfcfcf;
+    --border-color-hover: #121212;
+
+    --header-background: #ffffff;
+    --header-heading-color: #1c1b1b;
+    --header-border-color: #dddddd;
+    --header-light-text-color: #6a6a6a;
+    
+    --secondary-header-background: #121212;
+    --secondary-header-text-color: #ffffff;
+
+    --modal-background: #efefef;
+    --modal-span-text-color: #6a6a6a;
+    --modal-a-text-border:#1c1b1b;
+    --modal-a-text-color:#6a6a6a;
+
+    --text-money-color: #6a6a6a;
+}
+
+*{
+    font-family: 'Montserrat', sans serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    @media (min-width: 1024px) {
+        font-size: 93,75%;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        font-size: 87,5%;
+    }
+
+    @media (min-width: 375px) and (max-width: 767px) {
+        font-size: 81,25%;
+    }
+
+    @media (max-width: 374px) {
+        font-size: 68,75%;
+    }
+} 
+
+body{
+    background: var(--background);
+
+    h1 {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    p{
+        font-size: 0.8rem;
+    }
+    h2 {
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+    a {
+        text-decoration: none;
+        font-size: 0.8rem;
+        color: var(--text-color);
+        font-weight: 500;
+    }
+}
