@@ -34,6 +34,12 @@ export const MenuModal = ({isOpen, onRequestClose}: MenuModalProps) => {
                     ABOUT
                 </a>
                 <a 
+                    href="/shop" 
+                    onClick={onRequestClose}
+                >
+                    SHOP
+                </a>
+                <a 
                     href="/search" 
                     onClick={onRequestClose}
                 >
