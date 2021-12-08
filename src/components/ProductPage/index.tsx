@@ -2,10 +2,20 @@ import { TiSocialInstagram, TiSocialFacebook, TiSocialPinterest } from 'react-ic
 import { ButtonCart } from '../ButtonCart';
 import { useState } from 'react';
 
-import image01 from '../../../public/images/ManLooks (1).jpg'
 import styles from './styles.module.scss';
 
-export const ProductPage = () => {
+interface ProductProps {
+    product: {
+        id: string;
+        name: string;
+        path: string;
+        alt: string;
+        description: string;
+        price: number;
+    }
+}
+
+export const ProductPage = ( { product }: ProductProps) => {
     const [quantity, setQuantity] = useState(0)
 
     function handleSubQuantity() {
@@ -24,17 +34,17 @@ export const ProductPage = () => {
     return(
         <section className={styles.container}>
             <div className={styles.imageContainer}>
-                <img src={image01.src} alt="" />
+                <img src={product.path} alt={product.alt} />
             </div>
             <div className={styles.infoContainer}>
                 <div className={styles.infoProductContent}>
                     <h2>CLOTHING STORE</h2>
-                    <h1>NAME OF THE PRODUCT</h1>
+                    <h1>{product.name}</h1>
                     <span>$ 150</span>
                 </div>
                 <div className={styles.descriptionContent}>
                     <span>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        {product.description}
                     </span>
                     
                 </div>
@@ -80,7 +90,7 @@ export const ProductPage = () => {
                     </div>
                 </div>
 
-                <ButtonCart />
+                <ButtonCart name={product.name}/>
 
             </div>
         </section>

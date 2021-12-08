@@ -1,12 +1,16 @@
 import styles from './styles.module.scss';
 
-export const ButtonCart = () => {
+interface ButtonCartProps{
+    name:string;
+}
+
+export const ButtonCart = ({ name }: ButtonCartProps) => {
     return(
         <button 
             className={styles.buttonCart}
             type='button'
         >
-            ADD TO CART | NAME OF PRODUCT
+            ADD TO CART | {name}
         </button>
     )
 }

@@ -1,5 +1,6 @@
 
 import Head from "next/head"
+import { Pagination } from "../components/Pagination"
 import { ShopPanel } from "../components/ShopPanel"
 
 
@@ -13,6 +14,8 @@ export default function Shop() {
             
 
             <ShopPanel />
+
+            <Pagination />
 
         </>
     )

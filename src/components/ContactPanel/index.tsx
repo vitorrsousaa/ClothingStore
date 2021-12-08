@@ -18,7 +18,7 @@ export const ContactPanel = () => {
                     </a>
                 </div>
                 <div className={styles.spanContent}>
-                    <span>Da uma olhada lá e confere como que ficou</span>
+                    <span>Da uma olhada lá e confere como que ficou.</span>
                     <span>Como sempre tem alguma coisa para melhorar, pode me avisar.</span>
                     <span>E vamos continuar criando funcionalidades para este projeto.</span>
                 </div>
@@ -40,7 +40,7 @@ export const ContactPanel = () => {
                     </div>
                 </div>
                 <div>
-                    <h2>Oportunidade de emprego é pelo Linkedin, não pensei nisso</h2>
+                    <h2>Oportunidade de emprego é pelo Linkedin, não pensei nisso!</h2>
                     <div className={styles.infoContactContent}>
                         <a href="https://www.linkedin.com/in/vitorr-sousaa/">
                             <FaLinkedin />
