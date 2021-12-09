@@ -1,0 +1,26 @@
+.quantityContent{
+    margin: 1.5rem 0;
+    .quantityContentButton{
+        display: flex;
+        width: max-content;
+        align-items: center;
+        justify-items: center;
+        margin-top: 0.7rem;
+        border: solid 1px var(--product-quantity-content-border-color);
+        span{
+            margin: 2px 4px;
+            font-size: 1rem;
+        }
+
+        button{
+            border: none;
+            width: 1rem;
+            font-size: 2rem;
+            color: var(--product-quantity-text-color);
+            margin: 5px 12px;
+            &:active{
+                color: black;
+            }
+        }
+    }
+}

@@ -1,8 +1,16 @@
 import { TiSocialInstagram, TiSocialFacebook, TiSocialPinterest } from 'react-icons/ti'
+
 import { ButtonCart } from '../ButtonCart';
-import { useState } from 'react';
+import { SizeContent } from './SizeContent';
+import { ColorContent } from './ColorContent';
+import { QuantityContent } from './QuantityContent';
+import { InfoContent } from './InfoContent';
 
 import styles from './styles.module.scss';
+import { useState } from 'react';
+import { DescriptionContent } from './DescriptionContent';
+import { SocialContent } from './SocialContent';
+import { ImageContainer } from './ImageContainer';
 
 interface ProductProps {
     product: {
@@ -12,83 +20,47 @@ interface ProductProps {
         alt: string;
         description: string;
         price: number;
+        color: [];
+        size: [];
     }
 }
 
 export const ProductPrevious = ( { product }: ProductProps) => {
-    const [quantity, setQuantity] = useState(0)
 
-    function handleSubQuantity() {
-        if (quantity == 0){
-            return true
-        } else {
-            setQuantity(quantity-1)
-        }
-    }
-
-    function handleAddQuantity() {
-        setQuantity(quantity+1)
-    }
-
-
+    const [sizeSelected, setSizeSelected] = useState('')
+    const [colorSelected, setColorSelected] = useState('')
+    const [quantitySelected, setQuantitySelected] = useState(0)
+    
     return(
         <section className={styles.container}>
-            <div className={styles.imageContainer}>
-                <img src={product.path} alt={product.alt} />
-            </div>
-            <div className={styles.infoContainer}>
-                <div className={styles.infoProductContent}>
-                    <h2>CLOTHING STORE</h2>
-                    <h1>{product.name}</h1>
-                    <span>$ 150</span>
-                </div>
-                <div className={styles.descriptionContent}>
-                    <span>
-                        {product.description}
-                    </span>
-                    
-                </div>
-                <div className={styles.socialContent}>
-                    <span>SHARE: </span>
-                    <TiSocialInstagram />
-                    <TiSocialFacebook />
-                    <TiSocialPinterest />
-                </div>
-                <div className={styles.sizeContent}>
-                    <span>Size:</span>
-                    <div className={styles.sizeContentButton}>
-                        <button>M</button>
-                        <button>L</button>                      
-                        <button>G</button>
-                    </div>
-                </div>
-                <div className={styles.colorContent}>
-                    <span>Color:</span>
-                    <div className={styles.colorContentButton}>
-                        <button>White</button>
-                        <button>Brown</button>
-                        <button>Gray</button>
-                    </div>
-                </div>
-                <div className={styles.quantityContent}>
-                    <span>Quantity:</span>
-                    <div className={styles.quantityContentButton}>
-                        <button
-                            type='button'
-                            onClick={() => handleSubQuantity()}
-                        >
-                            -
-                        </button>
-                        <span>{quantity}</span>
-                        <button
-                            type='button'
-                            onClick={() => handleAddQuantity()}
-                        >
-                            +
-                        </button>
+            
+            <ImageContainer path={product.path} alt={product.alt} />
 
-                    </div>
-                </div>
+            <div className={styles.infoContainer}>
+                
+                <InfoContent name={product.name} price={product.price}/>
+
+                <DescriptionContent description={product.description} />
+
+                <SocialContent />
+                
+                <SizeContent 
+                    sizes={product.size} 
+                    sizeSelected={sizeSelected}
+                    setSizeSelected={setSizeSelected}
+                />
+
+                <ColorContent 
+                    colors={product.color}
+                    colorSelected={colorSelected}
+                    setColorSelected={setColorSelected}
+                    
+                />
+
+                <QuantityContent 
+                    setQuantity={setQuantitySelected}
+                    quantity={quantitySelected}
+                />
 
                 <ButtonCart name={product.name}/>
 

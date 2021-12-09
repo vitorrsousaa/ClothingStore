@@ -6,13 +6,6 @@
     justify-items: center;
     
 }
-.imageContainer {
-    
-    margin-right: 3rem;
-    img{
-        width: 100%;
-    }
-}
 
 .infoContainer{
     display: flex;
@@ -29,101 +22,4 @@
         border: solid 1px var(--product-size-content-border-color);
         cursor: pointer;
     }
-    
-    .infoProductContent{
-        padding-bottom: 2rem;
-        border-bottom: solid 1px var(--product-page-border-info);
-        
-        h2{
-            font-size: 0.7rem;
-            letter-spacing: 4px;
-            font-weight: 400;
-        }
-        h1{
-            margin: 2.5rem 0 1rem 0;
-            letter-spacing: 4px;
-            text-align: left;
-            font-weight: 500;
-        }
-        span{
-            font-size: 1rem;
-            font-weight: 500;
-            letter-spacing: 2px;
-        }
-    }
-    .descriptionContent{
-        margin: 1.5rem 0 0.9rem 0;
-    }
-
-    .socialContent {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        align-content: left;
-        
-        span{
-            margin-right: 7px;
-        }
-
-        svg{
-            cursor: pointer;
-            width: 2rem;
-            color: var(--cart-button-svg-color-hover);
-        }
-    }
-
-    .sizeContent{
-        margin: 2rem 0;
-        .sizeContentButton{
-            margin: 0.7rem 0;
-            *:not(:first-child){
-                margin-left: 0.8rem;
-            }
-            button{
-                width: 2.3rem;
-                height: 1.7rem;
-                border-radius: 99px;
-            }
-            
-        }
-    }
-
-    .colorContent{
-        .colorContentButton{
-            margin: 0.7rem 0;
-            *:not(:first-child){
-                margin-left: 0.8rem;
-            }
-            button{
-                width: 5rem;
-                height: 1.7rem;
-                border-radius: 99px;
-            }
-        }
-    }  
-
-    .quantityContent{
-        margin: 1.5rem 0;
-        .quantityContentButton{
-            display: flex;
-            width: max-content;
-            align-items: center;
-            justify-items: center;
-            margin-top: 0.7rem;
-            span{
-                margin: 2px 4px;
-                font-size: 1rem;
-            }
-
-            button{
-                border: none;
-                width: 1rem;
-                font-size: 2rem;
-                color: var(--product-quantity-text-color);
-                margin: 5px 12px;
-            }
-            border: solid 1px var(--product-quantity-content-border-color);
-        }
-    }
-
 }

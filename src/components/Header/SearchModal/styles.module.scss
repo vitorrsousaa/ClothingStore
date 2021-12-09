@@ -1,9 +1,31 @@
 .modal{
     background: var( --modal-background);
-    height: 20vh;
+    height: 15vh;
     width: 95vw;
     margin: 0 auto;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .container{
+        display: flex;
+        
+        height: 3rem;
+
+        .searchBox{
+            background: blueviolet;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            width: 600px;
+            input{
+                border: none;
+                background: blueviolet;
+                width: 100%;
+            }
+        }
+    }
 }
 
 .overlay{

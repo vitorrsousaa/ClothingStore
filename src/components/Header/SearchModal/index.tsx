@@ -1,5 +1,7 @@
 import Modal from 'react-modal'
 
+import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai'
+
 import styles from './styles.module.scss';
 
 interface SearchModalProps {
@@ -17,7 +19,13 @@ export const SearchModal = ({isOpen, onRequestClose}: SearchModalProps) => {
             className={styles.modal} 
         >
             
-            <div>Search Modal</div>
+            <label className={styles.container}>
+                <form className={styles.searchBox}>
+                    <AiOutlineSearch />
+                    <input type="text" placeholder='SEARCH ...'/>
+                </form>
+                <AiOutlineClose onClick={onRequestClose}/>
+            </label>
 
         </Modal>
         

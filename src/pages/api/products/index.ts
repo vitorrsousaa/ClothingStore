@@ -8,6 +8,8 @@ export default (request: NextApiRequest, response: NextApiResponse) => {
             name: 'THE YELLOW JACKET', 
             path: '/images/ManLooks (2).jpg', 
             alt:'YellowJacket', 
+            size: ['M', 'L', 'G'],
+            color: ['Yellow'],
             description:'LOREM AYSASDJASDASDASDASD', 
             price:15000
         },{ 
@@ -16,6 +18,8 @@ export default (request: NextApiRequest, response: NextApiResponse) => {
             path: '/images/WomanLooks (1).jpg', 
             alt:'GirlPowerShirt', 
             description:'LOREM AYSASDJASDASDASDASDasdsdas', 
+            size: ['M', 'L', 'G'],
+            color: ['White', 'Pink', 'Brown'],
             price: 17900
         },{ 
             id: '3', 
@@ -23,6 +27,8 @@ export default (request: NextApiRequest, response: NextApiResponse) => {
             path: '/images/ManLooks (3).jpg', 
             alt:'AmazingBlackJeans', 
             description:'LOREM AYSASDJASDASDASDASDasdsdas', 
+            size: ['M', 'L', 'G', 'GG'],
+            color: ['Black'],
             price: 18000
         },{ 
             id: '4', 
@@ -30,6 +36,8 @@ export default (request: NextApiRequest, response: NextApiResponse) => {
             path: '/images/ManLooks (1).jpg', 
             alt:'Sweater', 
             description:'LOREM AYSASDJASDASDASDASDasdsdas', 
+            size: ['M', 'L', 'G', 'GG'],
+            color: ['Light Brown', 'Gray', 'White'],
             price: 8000
         },{ 
             id: '5', 
@@ -37,6 +45,8 @@ export default (request: NextApiRequest, response: NextApiResponse) => {
             path: '/images/sunglasses (1).jpg', 
             alt:'SunglassModern', 
             description:'LOREM AYSASDJASDASDASDASDasdsdas', 
+            size: ['Single'],
+            color: ['Metallic Gray', 'White'],
             price: 4000
         },{ 
             id: '6', 
@@ -44,6 +54,8 @@ export default (request: NextApiRequest, response: NextApiResponse) => {
             path: '/images/sunglasses (2).jpg', 
             alt:'SunglassHighline', 
             description:'LOREM AYSASDJASDASDASDASDasdsdas', 
+            size: ['Single'],
+            color: ['White', 'Black'],
             price: 40000
         },{ 
             id: '7', 
@@ -51,6 +63,8 @@ export default (request: NextApiRequest, response: NextApiResponse) => {
             path: '/images/watches (2).jpg', 
             alt:'TheBlackWatch', 
             description:'LOREM AYSASDJASDASDASDASDasdsdas', 
+            size: ['Single'],
+            color: ['Black'],
             price: 20000
         },{ 
             id: '8', 
@@ -58,6 +72,8 @@ export default (request: NextApiRequest, response: NextApiResponse) => {
             path: '/images/Woman.jpg', 
             alt:'Shirt', 
             description:'LOREM AYSASDJASDASDASDASDasdsdas', 
+            size: ['M','L'],
+            color: ['White', 'Green', 'Blue'],
             price: 27000
         },
         

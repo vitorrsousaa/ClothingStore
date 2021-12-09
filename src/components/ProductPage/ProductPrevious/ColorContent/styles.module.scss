@@ -1,0 +1,14 @@
+.colorContent{
+    .colorContentButton{
+        margin: 0.7rem 0;
+        *:not(:last-child){
+            margin-right: 0.8rem;
+        }
+        button{
+            min-width: 4.5rem;
+            height: 1.7rem;
+            border-radius: 99px;
+            padding: 0 0.7rem;
+        }
+    }
+} 

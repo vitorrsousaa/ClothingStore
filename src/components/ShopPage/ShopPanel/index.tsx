@@ -1,9 +1,13 @@
-import { useEffect, useState } from 'react';
-import { useProductCurrent } from '../../../ProductsCurrentContext';
+import { ReactElement, useEffect, useState } from 'react';
 import Link from 'next/link'
 
 import styles from './styles.module.scss';
+import axios from 'axios';
+import { GetServerSideProps } from 'next';
 
+interface ShopProps {
+    products: Product[]
+}
 
 interface Product {
     id: string;
@@ -12,24 +16,11 @@ interface Product {
     alt: string;
     description: string;
     price: number;
+    color: [];
+    size: [];
 }
 
-export const ShopPanel = () => {
-    const { setIdProduct, idProduct } = useProductCurrent()
-    const [products, setProducts] = useState<Product[]>([])
-    
-    useEffect(()=>{
-        fetch('http://localhost:3000/api/products').then(response => response.json()).then(responseParsed => setProducts(responseParsed))
-    },[])
-
-    function handlePageProduct(props){
-        const productId = props.target.parentElement.id
-        console.log('id:', productId)
-        setIdProduct(productId)
-        console.log('context:', idProduct)
-
-        //window.location.replace(`/products/${props.target.alt}`)
-    }
+export const ShopPanel = ( { products }: ShopProps ) => {
 
     return (
         <div className={styles.productListContainer}>
@@ -38,14 +29,15 @@ export const ShopPanel = () => {
                     return(
                         <div className={styles.productListContent} key={product.id} id={product.id}>
                             <Link href={`/products/${product.alt}`} passHref>
-                                <img src={product.path} alt={product.alt}  loading='lazy' onClick={ (params) => handlePageProduct(params) } />
+                                <img src={product.path} alt={product.alt}  loading='lazy' />
                             </Link>
                             <div className={styles.productInfoContainer} >
                                 <h2>{product.name}</h2>
                                 <span>{new Intl.NumberFormat('en-US', {
                                     style: 'currency',
                                     currency: 'USD',
-                                }).format(product.price/100)}</span>
+                                    }).format(product.price/100)}
+                                </span>
                             </div>                           
                         </div>
                     )
