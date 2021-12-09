@@ -15,7 +15,7 @@ interface ProductProps {
     }
 }
 
-export const ProductPage = ( { product }: ProductProps) => {
+export const ProductPrevious = ( { product }: ProductProps) => {
     const [quantity, setQuantity] = useState(0)
 
     function handleSubQuantity() {

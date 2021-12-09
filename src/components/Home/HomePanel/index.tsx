@@ -1,8 +1,8 @@
 
-import image01 from '../../../public/images/ManLooks (2).jpg'
-import image04 from '../../../public/images/ManLooks (1).jpg'
-import image02 from '../../../public/images/ManLooks (3).jpg'
-import image03 from '../../../public/images/WomanLooks (1).jpg'
+import image01 from '../../../../public/images/ManLooks (2).jpg'
+import image04 from '../../../../public/images/ManLooks (1).jpg'
+import image02 from '../../../../public/images/ManLooks (3).jpg'
+import image03 from '../../../../public/images/WomanLooks (1).jpg'
 
 import styles from './styles.module.scss';
 

@@ -2,18 +2,28 @@ import Link from 'next/link'
 import { useState } from 'react';
 import Modal from 'react-modal';
 
-import { MenuModal } from '../MenuModal';
+import { MenuModal } from './MenuModal';
 import { HiMenu } from 'react-icons/hi'
 import { BsSearch } from 'react-icons/bs'
 import { GrShop } from 'react-icons/gr'
 
 import styles from './styles.module.scss';
+import { SearchModal } from './SearchModal';
 
 Modal.setAppElement('#__next')
 
 export const Header = () => {
 
     const [isMenuModalOpen, setIsMenuModalOpen] = useState(false)
+    const [isSearchModalOpen, setIsSearchModalOpen] = useState(false)
+
+    function handleOpenSearchModal() {
+        setIsSearchModalOpen(true)
+    }
+
+    function handleCloseSearchModal() {
+        setIsSearchModalOpen(false)
+    }
 
     function handleOpenMenuModal(){
         setIsMenuModalOpen(true)
@@ -37,12 +47,12 @@ export const Header = () => {
                 <Link href="/">
                     <a>CLOTHING STORE</a>
                 </Link>
-                <Link href="/search">
-                    <a>SEARCH</a>
-                </Link>
+
+                <a onClick={handleOpenSearchModal}>SEARCH</a>
+    
                 <Link href="/cart">
-                    <a>CART</a>
-                </Link>
+                    <a>CART (0)</a>
+                </Link> 
             </nav>
 
             <nav className={styles.headermobile}>
@@ -57,14 +67,19 @@ export const Header = () => {
                     <Link href="/shop">
                         <GrShop />
                     </Link>
-                    <Link href="/search">
-                        <BsSearch />                    
-                    </Link>
+                    
+                    <BsSearch onClick={handleOpenSearchModal}/>                    
+                    
                 </div>
 
                 <MenuModal 
                     isOpen={isMenuModalOpen}
                     onRequestClose={handleCloseMenuModal}
+                    searchModalOpen={handleOpenSearchModal}
+                />
+                <SearchModal 
+                    isOpen={isSearchModalOpen}
+                    onRequestClose={handleCloseSearchModal}
                 />
             </nav>
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useProductCurrent } from '../../ProductsCurrentContext';
+import { useProductCurrent } from '../../../ProductsCurrentContext';
 import Link from 'next/link'
 
 import styles from './styles.module.scss';

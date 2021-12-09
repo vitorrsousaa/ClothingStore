@@ -1,0 +1,9 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 95vw;
+    margin: 3rem auto;
+    @media (min-width: 850px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

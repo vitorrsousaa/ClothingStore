@@ -1,8 +1,12 @@
 
-import { ContactPanel } from '../components/ContactPanel';
+import { ContactIndex } from '../components/ContactPage/ContactIndex';
+
 
 export default function Contact() {
     return(
-        <ContactPanel />
+        <>
+            <ContactIndex />
+        
+        </>
     )
 }

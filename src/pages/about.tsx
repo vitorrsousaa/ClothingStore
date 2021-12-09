@@ -1,5 +1,5 @@
-import { AboutPanel } from "../components/AboutPanel";
-import { HeroAbout } from "../components/HeroAbout";
+import { AboutPanel } from "../components/AboutPage/AboutPanel";
+import { HeroAbout } from "../components/AboutPage/HeroAbout";
 
 export default function About() {
     return(

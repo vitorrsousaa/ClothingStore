@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import { ButtonHome } from '../components/ButtonHome'
-import { HeroHome } from '../components/HeroHome'
-import { HomePanel } from '../components/HomePanel'
+import { ButtonHome } from '../components/Home/ButtonHome'
+import { HeroHome } from '../components/Home/HeroHome'
+import { HomePanel } from '../components/Home/HomePanel'
 
 export default function Home() {
   return (

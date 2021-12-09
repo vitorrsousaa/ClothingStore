@@ -1,5 +1,5 @@
-import image01 from '../../../public/images/SideImage(1).jpg';
-import image02 from '../../../public/images/SideImage(2).jpg';
+import image01 from '../../../../public/images/SideImage(1).jpg';
+import image02 from '../../../../public/images/SideImage(2).jpg';
 
 import styles from './styles.module.scss'
 

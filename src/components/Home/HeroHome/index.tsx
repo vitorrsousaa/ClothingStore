@@ -1,4 +1,4 @@
-import HomeImageHero from '../../../public/images/StoryClothes.jpg'
+import HomeImageHero from '../../../../public/images/StoryClothes.jpg'
 
 import styles from './styles.module.scss';
 

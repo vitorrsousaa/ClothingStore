@@ -7,10 +7,15 @@ import styles from './styles.module.scss'
 interface MenuModalProps{
     isOpen: boolean;
     onRequestClose: () => void
+    searchModalOpen: () => void
 }
 
-export const MenuModal = ({isOpen, onRequestClose}: MenuModalProps) => {
+export const MenuModal = ({isOpen, onRequestClose, searchModalOpen}: MenuModalProps) => {
 
+    function handleModalsClose() {
+        onRequestClose()
+        searchModalOpen()
+    }
     return(
         <Modal
             isOpen={isOpen}
@@ -40,8 +45,8 @@ export const MenuModal = ({isOpen, onRequestClose}: MenuModalProps) => {
                     SHOP
                 </a>
                 <a 
-                    href="/search" 
-                    onClick={onRequestClose}
+                    
+                    onClick={handleModalsClose}
                 >
                     SEARCH
                 </a>

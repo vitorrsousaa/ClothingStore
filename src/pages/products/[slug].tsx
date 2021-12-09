@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import Head from "next/head"
 import React, { useEffect, useState } from "react"
-import { ProductPage } from "../../components/ProductPage"
+import { ProductPrevious } from "../../components/ProductPage/ProductPrevious"
 
 
 import { useProductCurrent } from "../../ProductsCurrentContext"
@@ -32,7 +32,7 @@ export default function productTest() {
                 <title>{productCurrent.alt} | Clothing store</title>
             </Head>
 
-            <ProductPage product={productCurrent}/>
+            <ProductPrevious product={productCurrent}/>
             
 
         </>
