@@ -7,6 +7,9 @@ import image03 from '../../../../public/images/WomanLooks (1).jpg'
 import styles from './styles.module.scss';
 
 export const HomePanel = () => {
+
+    console.log('COLOCAR LINK NAS IMAGENS DO HOME PANEL')
+
     return(
         <section className={styles.container}>
 

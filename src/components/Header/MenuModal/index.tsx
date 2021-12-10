@@ -50,12 +50,6 @@ export const MenuModal = ({isOpen, onRequestClose, searchModalOpen}: MenuModalPr
                 >
                     SEARCH
                 </a>
-                <a 
-                    href="/cart" 
-                    onClick={onRequestClose}
-                >
-                    CART
-                </a>
             </div>
         </Modal>
     )

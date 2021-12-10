@@ -1,20 +1,21 @@
-import Link from 'next/link'
 import { useState } from 'react';
 import Modal from 'react-modal';
 
+import { SecondaryHeader } from './SecondaryHeader';
+import { PrimaryHeader } from './PrimaryHeader';
+import { HeaderMobile } from './HeaderMobile';
 import { MenuModal } from './MenuModal';
-import { HiMenu } from 'react-icons/hi'
-import { BsSearch } from 'react-icons/bs'
-import { GrShop } from 'react-icons/gr'
+import { SearchModal } from './SearchModal';
+import { CartModal } from './CartModal';
 
 import styles from './styles.module.scss';
-import { SearchModal } from './SearchModal';
 
 Modal.setAppElement('#__next')
 
 export const Header = () => {
 
     const [isMenuModalOpen, setIsMenuModalOpen] = useState(false)
+    const [isCartModalOpen, setIsCartModalOpen] = useState(false)
     const [isSearchModalOpen, setIsSearchModalOpen] = useState(false)
 
     function handleOpenSearchModal() {
@@ -32,56 +33,44 @@ export const Header = () => {
         setIsMenuModalOpen(false)
     }
 
+    function handleOpenCartModal(){
+        setIsCartModalOpen(true)
+    }
+    function handleCloseCartModal(){
+        setIsCartModalOpen(false)
+    }
+
     return(
         <header className={styles.container}>
-            <div className={styles.secondaryHeader}> 
-                <p>25% OFF ALL PRODUCTS - UNTIL JANUARY</p>
-            </div>
-            <nav className={styles.primaryHeader}>
-                <Link href="/shop">
-                    <a>SHOP</a>
-                </Link>
-                <Link href="/about">
-                    <a>ABOUT</a>
-                </Link>
-                <Link href="/">
-                    <a>CLOTHING STORE</a>
-                </Link>
 
-                <a onClick={handleOpenSearchModal}>SEARCH</a>
-    
-                <Link href="/cart">
-                    <a>CART (0)</a>
-                </Link> 
-            </nav>
+            <SecondaryHeader />
 
-            <nav className={styles.headermobile}>
-                <HiMenu
-                    onClick={handleOpenMenuModal}
-                    className={styles.openMenuModal}
-                />
-                <Link href="/">
-                    <a>CLOTHING STORE</a>
-                </Link>
-                <div>           
-                    <Link href="/shop">
-                        <GrShop />
-                    </Link>
-                    
-                    <BsSearch onClick={handleOpenSearchModal}/>                    
-                    
-                </div>
+            <PrimaryHeader 
+                openSearchModal={handleOpenSearchModal}
+                openCartModal = {handleOpenCartModal}
+                
+            />
 
-                <MenuModal 
-                    isOpen={isMenuModalOpen}
-                    onRequestClose={handleCloseMenuModal}
-                    searchModalOpen={handleOpenSearchModal}
-                />
-                <SearchModal 
-                    isOpen={isSearchModalOpen}
-                    onRequestClose={handleCloseSearchModal}
-                />
-            </nav>
+            <HeaderMobile 
+                openMenuModal={handleOpenMenuModal}
+                openSearchModal={handleOpenSearchModal}
+                openCartModal={handleOpenCartModal}
+            />
+
+            <MenuModal 
+                isOpen={isMenuModalOpen}
+                onRequestClose={handleCloseMenuModal}
+                searchModalOpen={handleOpenSearchModal}
+            />
+            <SearchModal 
+                isOpen={isSearchModalOpen}
+                onRequestClose={handleCloseSearchModal}
+            />
+
+            <CartModal 
+                isOpen={isCartModalOpen}
+                onRequestClose={handleCloseCartModal}    
+            />
 
         </header>
     )

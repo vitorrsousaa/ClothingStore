@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styles from './styles.module.scss';
 
 interface QuantityContentProps {
@@ -6,7 +5,7 @@ interface QuantityContentProps {
     quantity: number;
 }
 
-export function QuantityContent({setQuantity, quantity}: QuantityContentProps) {
+export function QuantityContent( { setQuantity, quantity }: QuantityContentProps) {
 
     function handleSubQuantity() {
         if (quantity == 0){

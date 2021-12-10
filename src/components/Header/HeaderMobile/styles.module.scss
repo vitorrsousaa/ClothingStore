@@ -1,0 +1,54 @@
+.headermobile {
+    display: none;
+
+    @media (max-width: 729px) {
+        display: flex;
+    }
+
+    background: var(--header-background);
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    border: solid 0.4px;
+    
+    a{
+        font-weight: 600;
+        letter-spacing: 0.4rem;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+
+    div{
+        display: flex;
+        svg{
+            width: 17px;
+            height: 17px;
+            cursor: pointer;
+            margin-left: 5px;
+
+            @media (max-width: 350px) {
+                width: 12px;
+                height: 12px;
+            }
+        }
+        label{
+            display: flex;
+            justify-items: center;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+        &:last-child{
+            margin-right: 5px;
+        }
+    }
+    .openMenuModal{
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+
+        @media (max-width: 350px) {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}

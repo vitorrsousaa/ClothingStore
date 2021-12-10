@@ -1,0 +1,11 @@
+.secondaryHeader{
+    background: var(--secondary-header-background);
+    height: 30px;
+    color: var(--secondary-header-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p{
+        font-size: 0.7rem;
+    }
+}
