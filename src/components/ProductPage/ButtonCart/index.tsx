@@ -5,6 +5,7 @@ interface ButtonCartProps{
 }
 
 export const ButtonCart = ({ name }: ButtonCartProps) => {
+    
     return(
         <button 
             className={styles.buttonCart}
