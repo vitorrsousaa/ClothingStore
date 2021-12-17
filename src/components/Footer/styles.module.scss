@@ -2,8 +2,8 @@
     width: 95vw;
     min-height: 500px;
     margin: 7rem auto 0 auto;
-    border: solid 1px var(--footer-border-color);
-    background: var(--footer-background);
+    border: solid 1px var(--gray-900);
+    background: var(--white);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -14,7 +14,7 @@
         margin: 1rem 0 3rem 0;
     }
     a{
-        color: var(--footer-light-text-color);
+        color: var(--gray-400);
         margin-bottom: 1rem;
     }
     @media (min-width: 320px) and (max-width: 600px) {
@@ -50,7 +50,7 @@
     .clothingContainer{
         span{
             font-size: 0.8rem;
-            color: var(--footer-light-text-color);
+            color: var(--gray-400);
         }
     }
 }

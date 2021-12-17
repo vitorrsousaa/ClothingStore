@@ -3,33 +3,32 @@ import { useCart } from '../../../ProductsCartContext';
 import styles from './styles.module.scss';
 
 interface PrimaryHeaderProps {
-    openSearchModal: () => void;
     openCartModal: () => void;
 }
 
-export function PrimaryHeader({ openSearchModal, openCartModal }: PrimaryHeaderProps) {
-    const { products } = useCart()
-    
+export function PrimaryHeader({ openCartModal }: PrimaryHeaderProps) {
+    const { products } = useCart()    
 
     return(
         <nav className={styles.primaryHeader}>
-            <Link href="/shop">
+            <Link href="/shop" prefetch>
                 <a>SHOP</a>
             </Link>
-            <Link href="/about">
+            <Link href="/about" prefetch>
                 <a>ABOUT</a>
             </Link>
-            <Link href="/">
+            <Link href="/" prefetch>
                 <a>CLOTHING STORE</a>
             </Link>
+            <Link href="/contact" prefetch>
+                <a>CONTACT</a>
+            </Link>
 
-            <a onClick={openSearchModal}>
-                SEARCH
-            </a>
-    
-            
             <a onClick={openCartModal}>
-                CART ({products.length})
+                CART ({products.map( product => product.quantity)
+                    .reduce( (acumulador, atual) => {
+                        return acumulador+atual
+                    })})
             </a>
              
         </nav>

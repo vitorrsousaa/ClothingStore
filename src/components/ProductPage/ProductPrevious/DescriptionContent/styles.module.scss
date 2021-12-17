@@ -2,7 +2,13 @@
     margin: 1.5rem 0 0.9rem 0;
 
     span{
-        color: var(--product-share-text-color);
+        color: var(--gray-400);
         font-size: 0.8rem;
+    }
+
+    @media (min-width: 320px) and (max-width: 500px) {
+        span{
+            font-size: 0.5rem;
+        }
     }
 }

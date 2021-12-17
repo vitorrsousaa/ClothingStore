@@ -8,11 +8,10 @@ import styles from './styles.module.scss';
 
 interface HeaderMobileProps{
     openMenuModal: () => void;
-    openSearchModal: () => void;
     openCartModal: () => void;
 }
 
-export function HeaderMobile({ openMenuModal, openSearchModal, openCartModal }: HeaderMobileProps) {
+export function HeaderMobile({ openMenuModal, openCartModal }: HeaderMobileProps) {
 
     const { products } = useCart()
 
@@ -22,17 +21,17 @@ export function HeaderMobile({ openMenuModal, openSearchModal, openCartModal }: 
                 onClick={openMenuModal}
                 className={styles.openMenuModal}
             />
-            <Link href="/">
+            <Link href="/" prefetch>
                 <a>CLOTHING STORE</a>
             </Link>
             <div>           
-                <label >
-                    <GrShop onClick={openCartModal}/>
-                    ({products.length})
-                </label>
-                
-                
-                <BsSearch onClick={openSearchModal}/>                    
+                <label onClick={openCartModal} >
+                    <GrShop />
+                    ({products.map( product => product.quantity)
+                        .reduce( (acumulador, atual) => {
+                        return acumulador+atual
+                    })})
+                </label>                  
                 
             </div>
 

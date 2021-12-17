@@ -22,9 +22,9 @@ export const SizeContent = ( { sizes, sizeSelected, setSizeSelected }: SizeConte
                         <ButtonSelected 
                             selected={sizeSelected} 
                             elementCurrent={sizeElement}
+                            key={sizeElement}
                         >
                             <button
-                                key={sizeElement}
                                 onClick={() => setSizeSelected(sizeElement) }
                             >
                                 {sizeElement}

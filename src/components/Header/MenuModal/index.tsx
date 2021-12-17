@@ -3,19 +3,15 @@ import Modal from 'react-modal'
 import {GrClose} from 'react-icons/gr'
 
 import styles from './styles.module.scss'
+import Link from 'next/link'
 
 interface MenuModalProps{
     isOpen: boolean;
     onRequestClose: () => void
-    searchModalOpen: () => void
 }
 
-export const MenuModal = ({isOpen, onRequestClose, searchModalOpen}: MenuModalProps) => {
+export const MenuModal = ({isOpen, onRequestClose}: MenuModalProps) => {
 
-    function handleModalsClose() {
-        onRequestClose()
-        searchModalOpen()
-    }
     return(
         <Modal
             isOpen={isOpen}
@@ -32,24 +28,28 @@ export const MenuModal = ({isOpen, onRequestClose, searchModalOpen}: MenuModalPr
             </div>
 
             <div className={styles.content}>
-                <a 
-                    href="/about" 
-                    onClick={onRequestClose}
-                >
-                    ABOUT
-                </a>
-                <a 
-                    href="/shop" 
-                    onClick={onRequestClose}
-                >
-                    SHOP
-                </a>
-                <a 
-                    
-                    onClick={handleModalsClose}
-                >
-                    SEARCH
-                </a>
+                <Link href="/about" prefetch >
+                    <a  
+                        onClick={onRequestClose}
+                    >
+                        ABOUT
+                    </a>
+                </Link>
+                <Link href="/shop" prefetch >
+                    <a                         
+                        onClick={onRequestClose}
+                    >
+                        SHOP
+                    </a>
+                </Link>
+                <Link href="/contact" prefetch >
+                    <a                         
+                        onClick={onRequestClose}
+                    >
+                        CONTACT
+                    </a>
+                </Link>
+                
             </div>
         </Modal>
     )

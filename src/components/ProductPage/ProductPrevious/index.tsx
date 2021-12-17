@@ -1,4 +1,3 @@
-import { TiSocialInstagram, TiSocialFacebook, TiSocialPinterest } from 'react-icons/ti'
 
 import { ButtonCart } from '../ButtonCart';
 import { SizeContent } from './SizeContent';
@@ -7,11 +6,11 @@ import { QuantityContent } from './QuantityContent';
 import { InfoContent } from './InfoContent';
 
 import styles from './styles.module.scss';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { DescriptionContent } from './DescriptionContent';
 import { SocialContent } from './SocialContent';
 import { ImageContainer } from './ImageContainer';
-import axios from 'axios';
+
 
 interface ProductProps {
     product: {

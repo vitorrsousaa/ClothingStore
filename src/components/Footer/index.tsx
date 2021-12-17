@@ -9,16 +9,16 @@ export const Footer = () => {
             <div className={styles.content}>
                 <div className={styles.contentExplore}>
                     <h1>EXPLORE</h1>
-                    <Link href='/about'>
+                    <Link href='/about' prefetch>
                         <a>About</a>
                     </Link>
-                    <Link href='/shop'>
+                    <Link href='/shop' prefetch>
                         <a>Shop</a>
                     </Link>
                 </div>
                 <div>
                     <h1>TALK TO ME</h1>
-                    <Link href='/contact'>
+                    <Link href='/contact' prefetch>
                         <a>Contact</a>
                     </Link>
                 </div>

@@ -33,15 +33,30 @@ export function ProductsCartProvider( {children}: ProductsCartProviderProps ) {
 
     async function createProductCart(productInput: ProductProps) {
         // const response = await axios.post('http://localhost:3000/api/cart',
-        // {...productInput})
+        //     {...productInput})
 
         // const { product } = response.data;
 
-        setProducts([
+        products.length > 0 ? 
+
+        products.map( product => {
+            if(product.id === productInput.id){
+                if ( product.size === productInput.size && productInput.color === product.color) {
+                    product.quantity += productInput.quantity
+                }
+
+            } else {
+                setProducts([
+                    ...products,
+                    productInput
+                ])
+            }
+        })
+        
+        : setProducts([
             ...products,
             productInput
         ])
-
 
    }
 

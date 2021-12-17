@@ -6,21 +6,21 @@
 
 .content {
     padding: 14px 40px;
-    background-color: var(--button-background); 
-    border: 1px solid var(--button-background);
+    background-color: var(--gray-900); 
+    border: 1px solid var(--gray-900);
     cursor: pointer;
     
     a{
         font-weight: 500;
-        color: var(--button-text-color);
+        color: var(--white);
     }
     
     transition: all 0.5s ease;
     
     &:hover{
-        background-color: var(--button-text-color); 
+        background-color: var(--white); 
         a{
-            color: var(--button-background); 
+            color: var(--gray-900); 
         }
     }
 }

@@ -20,17 +20,17 @@
             cursor: pointer;
             border-radius: 5px;
             border: 0;
-            background: var(--cart-button-text-color-hover);
-            color: var(--border-color);
+            background: var(--gray-900);
+            color: var(--gray-50);
         
             & + button{
-                background: var(--light-background);
-                color: var(--text-color);
+                background: var(--white);
+                color: var(--gray-900);
                 margin-left: 1rem;
                 transition:all ease-in 0.2s;
 
                 &:hover{
-                    border: solid 1px var(--border-color-hover);
+                    border: solid 1px var(--gray-1000);
                 }
             }
             

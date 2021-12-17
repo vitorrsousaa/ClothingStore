@@ -16,15 +16,8 @@ export const Header = () => {
 
     const [isMenuModalOpen, setIsMenuModalOpen] = useState(false)
     const [isCartModalOpen, setIsCartModalOpen] = useState(false)
-    const [isSearchModalOpen, setIsSearchModalOpen] = useState(false)
 
-    function handleOpenSearchModal() {
-        setIsSearchModalOpen(true)
-    }
-
-    function handleCloseSearchModal() {
-        setIsSearchModalOpen(false)
-    }
+    
 
     function handleOpenMenuModal(){
         setIsMenuModalOpen(true)
@@ -46,25 +39,18 @@ export const Header = () => {
             <SecondaryHeader />
 
             <PrimaryHeader 
-                openSearchModal={handleOpenSearchModal}
                 openCartModal = {handleOpenCartModal}
                 
             />
 
             <HeaderMobile 
                 openMenuModal={handleOpenMenuModal}
-                openSearchModal={handleOpenSearchModal}
                 openCartModal={handleOpenCartModal}
             />
 
             <MenuModal 
                 isOpen={isMenuModalOpen}
                 onRequestClose={handleCloseMenuModal}
-                searchModalOpen={handleOpenSearchModal}
-            />
-            <SearchModal 
-                isOpen={isSearchModalOpen}
-                onRequestClose={handleCloseSearchModal}
             />
 
             <CartModal 

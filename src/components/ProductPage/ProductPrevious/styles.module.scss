@@ -15,11 +15,11 @@
     min-width: 32vw;
     
     span{
-        color: var(--product-share-text-color);
+        color: var(--gray-400);
         font-size: 0.8rem;
     }
     button{
-        border: solid 1px var(--product-size-content-border-color);
+        border: solid 1px var(--gray-400-5d);
         cursor: pointer;
     }
 }

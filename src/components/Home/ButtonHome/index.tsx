@@ -6,7 +6,7 @@ export const ButtonHome = () => {
 
     return (
         <div className={styles.container}>
-            <Link href="/shop">
+            <Link href="/shop" prefetch>
                 <button className={styles.content}>
                     <a>VIEW ALL PRODUCTS</a>
                 </button>

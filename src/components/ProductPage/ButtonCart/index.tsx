@@ -30,7 +30,7 @@ export const ButtonCart = ({ name, id, size, color, price, quantity, path }: But
             path
         } )
 
-    }
+    }    
     
     return(
         

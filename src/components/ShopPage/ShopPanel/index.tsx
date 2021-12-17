@@ -28,7 +28,7 @@ export const ShopPanel = ( { products }: ShopProps ) => {
                 products.map( ( product ) => {
                     return(
                         <div className={styles.productListContent} key={product.id} id={product.id}>
-                            <Link href={`/products/${product.alt}`} passHref>
+                            <Link href={`/products/${product.alt}`} passHref prefetch>
                                 <img src={product.path} alt={product.alt}  loading='lazy' />
                             </Link>
                             <div className={styles.productInfoContainer} >

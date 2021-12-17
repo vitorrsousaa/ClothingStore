@@ -3,6 +3,7 @@ import { AiOutlineMail } from 'react-icons/ai';
 import { BsTelephoneFill } from 'react-icons/bs';
 
 import styles from './styles.module.scss';
+import Link from 'next/link';
 
 export const ContactPanel = () => {
 
@@ -27,18 +28,25 @@ export const ContactPanel = () => {
                 <div>
                     <h2>Oportunidade de emprego é pelo Linkedin, não pensei nisso!</h2>
                     <div className={styles.infoContactContent}>
-                        <a href="https://www.linkedin.com/in/vitorr-sousaa/">
-                            <FaLinkedin />
-                        </a>
+                        <Link href="https://www.linkedin.com/in/vitorr-sousaa/" prefetch>                                                      
+                            <a  target="_blank">
+                                <FaLinkedin />
+                            </a> 
+                        </Link>
+
                         <span>Vitorr.Sousaa</span>
                     </div>
                 </div>
                 <div>
                     <h2>Confere meus outros projetos no GitHub!</h2>
                     <div className={styles.infoContactContent}>
-                        <a href="https://github.com/vitorrsousaa">
-                            <FaGithub />
-                        </a>
+
+                        <Link href="https://github.com/vitorrsousaa" prefetch>                         
+                            <a  target="_blank">
+                                <FaGithub />
+                            </a>                          
+                        </Link>
+                        
                         <span>vitorrsousaa</span>
                     </div>
                 </div>

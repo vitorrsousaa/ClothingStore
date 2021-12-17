@@ -8,8 +8,5 @@ export default (request: NextApiRequest, response: NextApiResponse) => {
         productsCart.push(request.body)
     }
 
-    console.log(productsCart)
-
-
     return response.json(productsCart)
 }

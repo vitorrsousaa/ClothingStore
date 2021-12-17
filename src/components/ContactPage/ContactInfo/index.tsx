@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
 
 import styles from './styles.module.scss';
@@ -10,9 +11,11 @@ export const ContactInfo = () => {
                 <h2>Entre em contato comigo !</h2>
                 <div className={styles.gitHubContent}>
                     <span>O código deste projeto esta disponível no GitHub.</span>
-                    <a href="https://github.com/vitorrsousaa/ClothingStore" target="_blank">
-                        <FaGithub />
-                    </a>
+                    <Link href="https://github.com/vitorrsousaa/ClothingStore" prefetch >
+                        <a  target="_blank">
+                            <FaGithub />
+                        </a>
+                    </Link>
                 </div>
                 <div className={styles.spanContent}>
                     <span>Da uma olhada lá e confere como que ficou.</span>

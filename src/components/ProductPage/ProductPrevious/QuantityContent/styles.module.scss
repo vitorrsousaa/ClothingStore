@@ -6,7 +6,7 @@
         align-items: center;
         justify-items: center;
         margin-top: 0.7rem;
-        border: solid 1px var(--product-quantity-content-border-color);
+        border: solid 1px var(--gray-400-5d);
         span{
             margin: 2px 4px;
             font-size: 1rem;
@@ -16,7 +16,7 @@
             border: none;
             width: 1rem;
             font-size: 2rem;
-            color: var(--product-quantity-text-color);
+            color: var(--gray-400);
             margin: 5px 12px;
             &:active{
                 color: black;

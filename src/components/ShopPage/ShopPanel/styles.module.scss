@@ -24,7 +24,7 @@
     align-items: center;
     img{
         border: solid 1px;
-        border-color: var(--border-color);
+        border-color: var(--gray-50);
         width: 22vw;
         transform: scale(0.97);
 
@@ -32,7 +32,7 @@
 
         &:hover{
             transform: scale(1);
-            border-color: var(--border-color-hover);
+            border-color: var(--gray-1000);
             cursor: pointer;
         }
     }
@@ -61,7 +61,7 @@
         letter-spacing: 4px;
     }
     span{
-        color: var(--text-money-color);
+        color: var(--gray-400);
         font-size: 0.9rem;
         margin: 0.3rem 0 5.6rem 0;
     }

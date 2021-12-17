@@ -20,9 +20,9 @@ export function ColorContent( { colors, colorSelected, setColorSelected }: Color
                         <ButtonSelected
                             selected={colorSelected}
                             elementCurrent={colorElement}
+                            key={colorElement.toString()}
                         >
                             <button 
-                                key={colorElement.toString()}
                                 onClick={()=> setColorSelected(colorElement)}
                             >
                                 {colorElement}
