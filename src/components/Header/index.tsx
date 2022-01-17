@@ -17,8 +17,6 @@ export const Header = () => {
     const [isMenuModalOpen, setIsMenuModalOpen] = useState(false)
     const [isCartModalOpen, setIsCartModalOpen] = useState(false)
 
-    
-
     function handleOpenMenuModal(){
         setIsMenuModalOpen(true)
     }
