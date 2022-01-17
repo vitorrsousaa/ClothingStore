@@ -30,7 +30,7 @@ export function HeaderMobile({ openMenuModal, openCartModal }: HeaderMobileProps
                     ({products.map( product => product.quantity)
                         .reduce( (acumulador, atual) => {
                         return acumulador+atual
-                    })})
+                    },0)})
                 </label>                  
                 
             </div>

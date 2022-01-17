@@ -1,9 +1,5 @@
-import { ReactElement, useEffect, useState } from 'react';
 import Link from 'next/link'
-
 import styles from './styles.module.scss';
-import axios from 'axios';
-import { GetServerSideProps } from 'next';
 
 interface ShopProps {
     products: Product[]

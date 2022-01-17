@@ -28,7 +28,7 @@ export function PrimaryHeader({ openCartModal }: PrimaryHeaderProps) {
                 CART ({products.map( product => product.quantity)
                     .reduce( (acumulador, atual) => {
                         return acumulador+atual
-                    })})
+                    }, 0)})
             </a>
              
         </nav>

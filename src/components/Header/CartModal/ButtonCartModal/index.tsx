@@ -1,13 +1,17 @@
 import styles from './styles.module.scss';
 
-export function ButtonCartModal() {
+interface ButtonCartModalProps {
+    total: string;
+}
+
+export function ButtonCartModal({ total }: ButtonCartModalProps ) {
     
     return(
             <button 
                 className={styles.buttonCart}
                 type='button'
             >
-                ADD TO CART | $1547
+                CHECKOUT | {total}
             </button>
     )
 }

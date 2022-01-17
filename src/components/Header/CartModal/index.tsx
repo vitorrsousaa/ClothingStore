@@ -14,6 +14,22 @@ export function CartModal({ isOpen, onRequestClose }: CartModalProps) {
 
     const { products } = useCart()
 
+    const total = products.map(product => product.quantity * product.price)
+        .reduce((acc, atual) => {
+            return acc + atual
+    }, 0)
+
+    const newTotal = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    }).format(total/100)
+
+    function handleRemoveProduct(indexProduct: number) {
+        console.log(products)
+        products.splice(indexProduct, 1)
+        console.log(products)
+    }
+
     return(
         <Modal
             isOpen={isOpen}
@@ -28,29 +44,30 @@ export function CartModal({ isOpen, onRequestClose }: CartModalProps) {
                 </div>
 
                 <div className={styles.productsContainer}>
-                    {products.map( product => {
+                    {products.map( (product , index) => {
                         return(
-                            <div className={styles.productContent}>
+                            <div className={styles.productContent} key={product.name+product.quantity}>
                                 <div className={styles.imageContainer}>
                                     <img src={product.path} alt={product.name} />
                                 </div>
                                 <div className={styles.infoContainer}>
                                     <h2>{product.name}</h2>
-                                    <span>Color: {product.color}</span>
-                                    <span>Size: {product.size}</span>
-                                    <span>Quantity: {product.quantity}</span>
+                                    <span>{product.size} / {product.color}</span>
+                                    <span>{new Intl.NumberFormat('en-US', {
+                                            style: 'currency',
+                                            currency: 'USD',
+                                            }).format((product.quantity * product.price)/100)}
+                                    </span>
+                                    <span>{product.quantity} Units</span>
                                 </div>
-                                <div className={styles.priceContainer}>
-                                    <h2>{product.quantity * product.price}</h2>
-                                    <GrClose />
-                                </div>
+                                <GrClose onClick={()=> handleRemoveProduct(index)}/>
                             </div>
                         )
                     })}
                 </div>
 
                 <div>
-                    <ButtonCartModal />
+                    <ButtonCartModal total = {newTotal} />
                 </div>
             </div>
         </Modal>
