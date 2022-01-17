@@ -1,5 +1,6 @@
 import { GetServerSideProps } from "next"
 import Head from "next/head"
+import { useEffect, useState } from "react"
 import { Pagination } from "../components/ShopPage/Pagination"
 import { ShopPanel } from "../components/ShopPage/ShopPanel"
 
@@ -18,7 +19,16 @@ interface Product {
     size: [];
 }
 
-export default function Shop( {products}: ShopProps ) {
+export default function Shop(  ) {
+    const [products, setProducts] = useState([] as Product[])
+
+    async function getProducts() {
+        await fetch('http://localhost:3000/api/products').then(response => response.json()).then(responseParsed => setProducts(responseParsed))
+    }
+
+    useEffect(() => {
+        getProducts()
+    }, [])
 
     return (
         <>
@@ -35,13 +45,3 @@ export default function Shop( {products}: ShopProps ) {
     )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-
-    const products = await fetch('http://localhost:3000/api/products').then(response => response.json())
-
-    return {
-        props: {
-            products: products
-        }
-    }
-}
