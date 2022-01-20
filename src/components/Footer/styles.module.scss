@@ -1,68 +1,65 @@
-.container{
-    width: 95vw;
-    min-height: 500px;
-    margin: 7rem auto 0 auto;
-    border: solid 1px var(--gray-900);
-    background: var(--white);
+.container {
+  width: 95vw;
+  min-height: 500px;
+  margin: 7rem auto 0 auto;
+  border: solid 1px var(--gray-900);
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 5rem;
+  h1 {
+    letter-spacing: 4px;
+    font-weight: 500;
+    margin: 1rem 0 3rem 0;
+  }
+  a {
+    color: var(--gray-400);
+    margin-bottom: 1rem;
+  }
+  @media (min-width: 320px) and (max-width: 600px) {
+    padding: 1rem 2rem;
+    h1 {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+
+  @media (min-width: 320px) and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    .clothingContainer {
+      margin: 2rem 0 2rem 0;
+      span {
+        font-size: 0.6rem;
+      }
+    }
+  }
+
+  .contentExplore {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 3rem 5rem;
-    h1{
-        letter-spacing: 4px;
-        font-weight: 500;
-        margin: 1rem 0 3rem 0;
-    }
-    a{
-        color: var(--gray-400);
-        margin-bottom: 1rem;
-    }
-    @media (min-width: 320px) and (max-width: 600px) {
-        padding: 1rem 2rem;
-        h1{
-            font-size: 0.8rem;
-        }
-    }
+  }
 
+  .clothingContainer {
+    span {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+  }
 }
 
-.content{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: space-between;
-
-    @media (min-width: 320px) and (max-width: 600px) {
-        grid-template-columns: 1fr;
-        .clothingContainer{
-            margin: 2rem 0 2rem 0;
-            span{
-                font-size: 0.6rem;
-            }
-        }
-    }
-
-    .contentExplore{
-        display: flex;
-        flex-direction: column;
-        
-    }
-
-    .clothingContainer{
-        span{
-            font-size: 0.8rem;
-            color: var(--gray-400);
-        }
-    }
-}
-
-.contentFooter{
-    
-    span{
-        font-size: 0.7rem;
-    }
-    h2{
-        font-size: 0.9rem;
-        margin-bottom: 12px;
-        letter-spacing: 4px;
-    }
+.contentFooter {
+  span {
+    font-size: 0.7rem;
+  }
+  h2 {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    letter-spacing: 4px;
+  }
 }

@@ -26,10 +26,10 @@ export const ProductsCartContext = createContext<ProductsCartContextData>({} as 
 export function ProductsCartProvider( {children}: ProductsCartProviderProps ) {
     const [products, setProducts] = useState<ProductProps[]>([]);
 
-    useEffect(()=>{
-        axios.get('http://localhost:3000/api/cart')
-            .then(response => setProducts(response.data))
-    }, [])
+    // useEffect(()=>{
+    //     axios.get('http://localhost:3000/api/cart')
+    //         .then(response => setProducts(response.data))
+    // }, [])
 
     async function createProductCart(productInput: ProductProps) {
         // const response = await axios.post('http://localhost:3000/api/cart',

@@ -1,21 +1,22 @@
+import { Footer } from "../components/Footer";
+import { Header } from "../components/Header";
+import { ProductsCartProvider } from "../ProductsCartContext";
+import { ProductsContextProvider } from "../ProductsContext";
 
-import { Footer } from "../components/Footer"
-import { Header } from "../components/Header"
-import { ProductsCartProvider } from "../ProductsCartContext"
-
-import '../styles/global.scss'
+import "../styles/global.scss";
 
 function MyApp({ Component, pageProps }) {
   return (
     <ProductsCartProvider>
-      <Header />
+      <ProductsContextProvider>
+        <Header />
 
-      <Component {...pageProps} />
+        <Component {...pageProps} />
 
-      <Footer />
-
+        <Footer />
+      </ProductsContextProvider>
     </ProductsCartProvider>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

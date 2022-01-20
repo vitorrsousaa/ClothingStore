@@ -1,78 +1,71 @@
+import { ButtonCart } from "../ButtonCart";
+import { SizeContent } from "./SizeContent";
+import { ColorContent } from "./ColorContent";
+import { QuantityContent } from "./QuantityContent";
+import { InfoContent } from "./InfoContent";
 
-import { ButtonCart } from '../ButtonCart';
-import { SizeContent } from './SizeContent';
-import { ColorContent } from './ColorContent';
-import { QuantityContent } from './QuantityContent';
-import { InfoContent } from './InfoContent';
-
-import styles from './styles.module.scss';
-import { useState } from 'react';
-import { DescriptionContent } from './DescriptionContent';
-import { SocialContent } from './SocialContent';
-import { ImageContainer } from './ImageContainer';
-
+import styles from "./styles.module.scss";
+import { useState } from "react";
+import { DescriptionContent } from "./DescriptionContent";
+import { SocialContent } from "./SocialContent";
+import { ImageContainer } from "./ImageContainer";
 
 interface ProductProps {
-    product: {
-        id: string;
-        name: string;
-        path: string;
-        alt: string;
-        description: string;
-        price: number;
-        color: [];
-        size: [];
-    }
+  product: {
+    id: string;
+    name: string;
+    alt: string;
+    size: string[];
+    color: string[];
+    price: number;
+    description: string;
+    path: string;
+  };
 }
 
-export const ProductPrevious = ( { product }: ProductProps) => {
+export const ProductPrevious = ({ product }: ProductProps) => {
+  const [sizeSelected, setSizeSelected] = useState("");
+  const [colorSelected, setColorSelected] = useState("");
+  const [quantitySelected, setQuantitySelected] = useState(0);
 
-    const [sizeSelected, setSizeSelected] = useState('')
-    const [colorSelected, setColorSelected] = useState('')
-    const [quantitySelected, setQuantitySelected] = useState(0)  
-    
-    return(
-        <section className={styles.container}>
-            
-            <ImageContainer path={product.path} alt={product.alt} />
+  return (
+    <section className={styles.container}>
+      <ImageContainer path={product.path} alt={product.alt} />
 
-            <div className={styles.infoContainer}>
-                
-                <InfoContent name={product.name} price={product.price}/>
+      <div className={styles.infoContainer}>
+        <InfoContent name={product.name} price={product.price} />
 
-                <DescriptionContent description={product.description} />
+        <DescriptionContent description={product.description} />
 
-                <SocialContent />
-                
-                <SizeContent 
-                    sizes={product.size} 
-                    sizeSelected={sizeSelected}
-                    setSizeSelected={setSizeSelected}
-                />
+        <SocialContent />
 
-                <ColorContent 
-                    colors={product.color}
-                    colorSelected={colorSelected}
-                    setColorSelected={setColorSelected}
-                    
-                />
+        <SizeContent
+          sizes={product.size}
+          sizeSelected={sizeSelected}
+          setSizeSelected={setSizeSelected}
+        />
 
-                <QuantityContent 
-                    setQuantity={setQuantitySelected}
-                    quantity={quantitySelected}
-                />
+        <ColorContent
+          colors={product.color}
+          colorSelected={colorSelected}
+          setColorSelected={setColorSelected}
+        />
 
-                <ButtonCart 
-                    name={product.name}
-                    id={product.id}
-                    size={sizeSelected}
-                    color={colorSelected}
-                    price={product.price}
-                    quantity={quantitySelected}
-                    path={product.path}
-                />
+        <QuantityContent
+          setQuantity={setQuantitySelected}
+          quantity={quantitySelected}
+        />
 
-            </div>
-        </section>
-    )
-}
+        <ButtonCart
+          name={product.name}
+          id={product.id}
+          size={sizeSelected}
+          color={colorSelected}
+          price={product.price}
+          quantity={quantitySelected}
+          path={product.path}
+        />
+      </div>
+    </section>
+  );
+};
